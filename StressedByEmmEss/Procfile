@@ -1,0 +1,1 @@
+web: gunicorn StressedByEmmEss.wsgi --log-file -
