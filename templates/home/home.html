@@ -30,7 +30,7 @@ body {
 
   {% for item in slide %}
      <div class="carousel-item {% if forloop.first %}active{% endif %}">
-       <img src="{{item.cloudinary_link}}" class="d-block w-100" alt="{{item.carousel_name}}">
+       <img src="/media/{{item.carousel_image}}" class="d-block w-100" alt="{{item.carousel_name}}">
      </div>
 
      {% endfor %}
