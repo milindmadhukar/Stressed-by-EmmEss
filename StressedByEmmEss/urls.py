@@ -8,4 +8,5 @@ admin.site.index_title = "Welcome to Stresses By EmmEss Panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('menu/', include('menu.urls')),
 ]
