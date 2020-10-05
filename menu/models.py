@@ -10,8 +10,8 @@ class Product(models.Model):
         ("Cake","Cake"),
         ("Cheesecake","Cheesecake"),
         ("Chef's Special","Chef's Special"),
-        ("Cupcakes","Cupcakes"),
-        ("Fudges","Fudges"),
+        ("Cupcake","Cupcake"),
+        ("Fudge","Fudge"),
         ("Tea Time","Tea Time"),
     )
 
