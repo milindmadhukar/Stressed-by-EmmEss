@@ -15,7 +15,7 @@ class Product(models.Model):
         ("Tea Time","Tea Time"),
     )
 
-    product_category = models.CharField(max_length = 110, choices=categories, default ="")
+    product_category = models.CharField(max_length = 110, choices=categories)
 
     product_preview_image = models.ImageField(upload_to="menu/images", default="")
 
