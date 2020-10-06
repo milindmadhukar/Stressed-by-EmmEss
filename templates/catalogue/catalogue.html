@@ -5,7 +5,7 @@
 {% block css %}
 
 body {
-  background-color: #FF1493;
+background-color: #FF0080;
 }
 
 {% endblock css %}
@@ -17,21 +17,21 @@ body {
 {% for slide in carosuel_slides %}
 
 <div class="container-fluid my-2">
-<h1 style="color:white;"><b>{{categories|accessItem:forloop.counter0}}<b></h1>
+  <h1 style="color:white;"><b>{{categories|accessItem:forloop.counter0}}<b></h1>
 </div>
 
 
 <div id="carousel{{forloop.counter}}" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
 
-  {% for item in slide %}
-     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-       <img src="/media/{{item.carousel_image}}" class="d-block w-100" alt="{{item.carousel_name}}">
-     </div>
+    {% for item in slide %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img src="/media/{{item.carousel_image}}" class="d-block w-100" alt="{{item.carousel_name}}">
+    </div>
 
-     {% endfor %}
+    {% endfor %}
   </div>
-  
+
   <a class="carousel-control-prev" href="#carousel{{forloop.counter}}" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -41,6 +41,7 @@ body {
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 
 {% endfor %}
 
