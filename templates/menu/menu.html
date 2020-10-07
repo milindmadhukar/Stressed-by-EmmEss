@@ -32,14 +32,13 @@ background-color: #FF0080;
     <li data-target="#carousel{{categories|categoryFormat:forloop.counter0}}" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    {% for product in slide %}
+    {% for product in slide%}
     <div class="carousel-item {% if forloop.first %}active{% endif %}">
       <div class="card" style="width: 18rem;">
-        <img src="/media/{{product.product_preview_image}}" class="card-img-top" alt="{{product.name}}">
+        <img src="/media/{{product.product_preview_image}}" loading="lazy" class="card-img-top" alt="{{product.name}}">
         <div class="card-body">
           <h5 class="card-title">{{product.product_name}}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text"><b>Price:</b><br><small>Starting from </small>{{product.product_price}} Rs.</p>
           <a href="/" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
