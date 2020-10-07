@@ -22,6 +22,6 @@ class Product(models.Model):
     product_price = models.PositiveIntegerField(default = 0)
 
     def __str__(self):
-        return self.product_name + "- Rs " + self.prduct_price
+        return f"{self.product_name} - Rs {self.product_price}"
 
     
