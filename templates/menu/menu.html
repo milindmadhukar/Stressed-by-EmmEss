@@ -4,9 +4,13 @@
 
 {% block css %}
 
-{% comment %} body {
+body {
 background-color: #FF0080;
-} {% endcomment %}
+} 
+
+.carousel-inner {
+  margin: auto;
+}
 
 {% endblock css %}
 
@@ -34,7 +38,7 @@ background-color: #FF0080;
   <div class="carousel-inner">
     {% for product in slide%}
     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-      <div class="card" style="width: 18rem;">
+      <div class="card my-2" style="width: 18rem;">
         <img src="/media/{{product.product_preview_image}}" loading="lazy" class="card-img-top" alt="{{product.name}}">
         <div class="card-body">
           <h5 class="card-title">{{product.product_name}}</h5>
