@@ -12,10 +12,10 @@ background-color: #FF0080;
 margin: auto;
 }
 
-.col-6{
+{% comment %} .col-6{
 display: contents;
 margin-left: -4px;
-}
+} {% endcomment %}
 
 {% endblock css %}
 
@@ -32,32 +32,50 @@ margin-left: -4px;
 
 {% load menuFilters %}
 
-<div class="container my-2">
-  <div class="row">
-    <div class="col-6 mx-2">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 mx-2">
-     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    </div>
+<div class="container"> 
+		<div class="row"> 
+			<div class="col-lg-6 col-6 mb-4"> 
+				<div class="card"> 
+					<img class="card-img-top" src="" alt=""> 
 
-  </div>
-</div>
+					<div class="card-body"> 
+						<h5 class="card-title">Card title</h5> 
+						<p class="card-text"> 
+							Some quick example text to build on 
+							the card title and make up the bulk 
+							of the card's content. 
+						</p> 
+
+						<a href="#" class="btn btn-outline-primary btn-sm"> 
+							Card link 
+						</a> 
+						<a href="#" class="btn btn-outline-secondary btn-sm"> 
+							<i class="far fa-heart"></i></a> 
+					</div> 
+				</div> 
+			</div> 
+			<div class="col-lg-6 col-6 mb-4"> 
+				<div class="card"> 
+					<img class="card-img-top" src="" alt=""> 
+
+					<div class="card-body"> 
+						<h5 class="card-title">Card title</h5> 
+						<p class="card-text"> 
+							Some quick example text to build on the 
+							card title and make up the bulk of the 
+							card's content. 
+						</p> 
+						
+						<a href="#" class="btn btn-outline-primary btn-sm"> 
+							Card link 
+						</a> 
+						<a href="#" class="btn btn-outline-secondary btn-sm"> 
+							<i class="far fa-heart"></i></a> 
+					</div> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
 
 {% endfor %}
 
