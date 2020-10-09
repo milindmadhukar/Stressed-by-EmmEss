@@ -6,6 +6,7 @@ class CarouselSlide(models.Model):
     carousel_name = models.CharField(max_length = 200, default = "")
     carousel_category = models.CharField(max_length = 110, choices=Product.categories)
     carousel_image = models.ImageField(upload_to="catalogue/images",default = "")
+    image_link = models.CharField(max_length = 500, default = "")
 
     def __str__(self):
         return self.carousel_name

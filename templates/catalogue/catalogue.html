@@ -25,8 +25,9 @@ background-color: #FF0080;
   <div class="carousel-inner">
 
     {% for item in slide %}
+    
     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-      <img src="/media/{{item.carousel_image}}" loading="lazy" class="d-block w-100" alt="{{item.carousel_name}}">
+      <img src = "{{item.image_link|getSrc}}" class="d-block w-100" alt="">
     </div>
 
     {% endfor %}
