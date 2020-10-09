@@ -6,10 +6,15 @@
 
 body {
 background-color: #FF0080;
-} 
+}
 
 .carousel-inner {
-  margin: auto;
+margin: auto;
+}
+
+.col-6{
+display: contents;
+margin-left: -4px;
 }
 
 {% endblock css %}
@@ -27,41 +32,31 @@ background-color: #FF0080;
 
 {% load menuFilters %}
 
-<div class="container">
-
-<div id="carousel{{categories|categoryFormat:forloop.counter0}}" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel{{categories|categoryFormat:forloop.counter0}}" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel{{categories|categoryFormat:forloop.counter0}}" data-slide-to="1"></li>
-    <li data-target="#carousel{{categories|categoryFormat:forloop.counter0}}" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    {% for product in slide%}
-    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-      <div class="card my-2" style="width: 18rem;">
-        <img src="/media/{{product.product_preview_image}}" loading="lazy" class="card-img-top" alt="{{product.name}}">
+<div class="container my-2">
+  <div class="row">
+    <div class="col-6 mx-2">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{product.product_name}}</h5>
-          <p class="card-text"><b>Price:</b><br><small>Starting from </small>{{product.product_price}} Rs.</p>
-          <a href="/" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-      <br>
     </div>
-    {% endfor %}
+    <div class="col-6 mx-2">
+     <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-  <a class="carousel-control-prev" href="#carousel{{categories|categoryFormat:forloop.counter0}}" role="button"
-    data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel{{categories|categoryFormat:forloop.counter0}}" role="button"
-    data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
+    </div>
 
+  </div>
 </div>
 
 {% endfor %}
