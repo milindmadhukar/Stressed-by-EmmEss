@@ -1,4 +1,5 @@
 from django import template
+from math import ceil
 
 register = template.Library()
 
@@ -12,4 +13,38 @@ def categoryFormat(value,index):
 
     print(tmp.lower())
     return tmp.lower()
+
+
+@register.filter()
+def getRange(value):
+    n = len(value)
+    nSlides = n//2 + ceil((n/2)-(n//2))
+    return range(1,nSlides+1)
+
+@register.filter()
+def getNoOfSlides(value):
+    n = len(value)
+    nSlides = n//2 + ceil((n/2)-(n//2))
+    return nSlides
+
+@register.filter()
+def isOdd(value):
+    if len(value) % 2 == 1:
+        return True
+    else:
+        return False
+
+@register.filter()
+def getOddItem(value,index):
+    return value[(2*index) - 2]
+
+@register.filter()
+def getEvenItem(value,index):
+    return value[(2*index) - 1]
+
+@register.filter()
+def getValue(value, valueName):
+    return value.get(valueName)
+
+
 
