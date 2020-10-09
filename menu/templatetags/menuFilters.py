@@ -46,5 +46,12 @@ def getEvenItem(value,index):
 def getValue(value, valueName):
     return value.get(valueName)
 
+@register.filter()
+def getSrc(value):
+    word = value.split(' ')[1]
+    word = word[5:len(word)-1]
+    return word
+
+
 
 

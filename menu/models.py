@@ -17,7 +17,7 @@ class Product(models.Model):
 
     product_category = models.CharField(max_length = 110, choices=categories)
 
-    product_preview_image = models.ImageField(upload_to="menu/images", default="")
+    product_image_link = models.CharField(max_length = 500)
 
     product_price = models.PositiveIntegerField(default = 0)
 
@@ -25,7 +25,7 @@ class Product(models.Model):
         return f"{self.product_name} - Rs {self.product_price}"
 
     def get(self, value):
-        vals = {'product_id':self.product_id,'product_name':self.product_name, 'product_preview_image':self.product_preview_image, 'product_price':self.product_price}
+        vals = {'product_id':self.product_id,'product_name':self.product_name, 'product_image_link':self.product_image_link, 'product_price':self.product_price}
 
         return vals.get(value)
 
