@@ -12,11 +12,6 @@ background-color: #FF0080;
 margin: auto;
 }
 
-{% comment %} .col-6{
-display: contents;
-margin-left: -4px;
-} {% endcomment %}
-
 {% endblock css %}
 
 {% block body %}
@@ -41,9 +36,8 @@ margin-left: -4px;
         <div class="row">
           <div class="col-lg-6 col-6 mb-4">
             <div class="card m-1">
-            <img src="{{slide|getOddItem:item|getValue:'product_image_link'|getSrc}}" alt="{{slide|getOddItem:item|getValue:'product_name'}}" class="img-thumbnail">
-              {% comment %} <img class="card-img-top" src="/media/{{slide|getOddItem:item|getValue:'product_preview_image'}}" alt="{{slide|getOddItem:item|getValue:'product_name'}}" width = "100px" height="100px"> {% endcomment %}
-
+            <img src="{{slide|getOddItem:item|getValue:'product_image_link'|getSrc}}" alt="{{slide|getOddItem:item|getValue:'product_name'}}" class="img-thumbnail" loading = "lazy">
+            <div class="fluid-container">
               <div class="card-body">
                 <h5 class="card-title">{{slide|getOddItem:item|getValue:'product_name'}} </h5>
                 {% comment %} <p class="card-text">
@@ -51,20 +45,21 @@ margin-left: -4px;
                 </p> {% endcomment %}
 
                 <a href="#" class="btn btn-outline-primary btn-sm">
-                  Card link
+                  View Product
                 </a>
+              </div>
               </div>
             </div>
           </div>
-          {% comment %} 2nd Card {% endcomment %}
           {% if forloop.last and slide|isOdd %}
 
           {% else %}
 
           <div class="col-lg-6 col-6 mb-4">
-            <div class="card">
-              <img src="{{slide|getEvenItem:item|getValue:'product_image_link'|getSrc}}" alt="{{slide|getEvenItem:item|getValue:'product_name'}}" class="img-thumbnail">
+            <div class="card m-1">
+              <img src="{{slide|getEvenItem:item|getValue:'product_image_link'|getSrc}}" alt="{{slide|getEvenItem:item|getValue:'product_name'}}" class="img-thumbnail" loading = "lazy">
 
+              <div class="fluid-container">
               <div class="card-body">
                 <h5 class="card-title">{{slide|getEvenItem:item|getValue:'product_name'}}</h5>
                 {% comment %} <p class="card-text">
@@ -72,8 +67,9 @@ margin-left: -4px;
                 </p> {% endcomment %}
 
                 <a href="#" class="btn btn-outline-primary btn-sm">
-                  Card link
+                  View Product
                 </a>
+              </div>
               </div>
             </div>
           </div>
