@@ -7,6 +7,11 @@ def menu(request):
     for category in Product.categories:
         carosuel_slides.append(Product.objects.filter(product_category=category[0]))
         categories.append(category[0])
-    print(carosuel_slides)
+
+    # maxlen = []
+
+    # for category in carosuel_slides:
+    #     for item in category:
+
     context = {"categories":categories,"carosuel_slides":carosuel_slides,}
     return render(request ,'menu/menu.html', context=context)
